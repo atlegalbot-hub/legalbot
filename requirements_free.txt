@@ -1,0 +1,28 @@
+# FREE PDF RAG Chatbot Requirements (100% Open Source)
+# All components are completely FREE - no paid services!
+
+# Web Framework (FREE)
+flask==3.0.0
+flask-cors==4.0.0
+flask-sqlalchemy==3.1.1
+
+# PDF Processing (FREE)
+PyPDF2==3.0.1
+pdfplumber==0.9.0
+
+# AI/ML Models (FREE)
+sentence-transformers==2.2.2
+transformers==4.35.2
+torch==2.1.1
+
+# Vector Search (FREE)
+faiss-cpu==1.7.4
+
+# Text Processing (FREE)
+nltk==3.8.1
+scikit-learn==1.3.2
+rank-bm25==0.2.2
+
+# Utilities (FREE)
+numpy==1.24.3
+python-dotenv==1.0.0
