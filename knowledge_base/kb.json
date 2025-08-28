@@ -1,0 +1,220 @@
+[
+  {
+    "id": "HISTORY_TIMELINE",
+    "title": "History of the Constitution of India: A Precise Timeline",
+    "section": "Timeline",
+    "tags": ["history", "timeline", "CAI", "adoption"],
+    "content": "1858: British Crown assumes rule over India after 1857 Revolt. 1861–1935: A series of Acts (Indian Councils Acts, Government of India Acts) create limited representation. 1935: Government of India Act, 1935 becomes the main governing law, introducing provincial autonomy and federal scheme. 1946: Cabinet Mission proposes Constituent Assembly. 9 Dec 1946: First meeting of the Constituent Assembly of India (CAI). 13 Dec 1946: Objective Resolution moved by Jawaharlal Nehru, underlying sovereign democratic republic and justice-liberty-equality ideals. 26 Nov 1949: Constitution of India adopted by the CAI. 26 Jan 1950: Constitution comes into force (Republic Day); India becomes a Sovereign Democratic Republic; Governor-General replaced by President; 1935 Act repealed. 1950s–1970s: Early constitutional practice and key judgments (A.K. Gopalan 1950; Golaknath 1967 limiting Parliament's power to amend FRs). 1973: Kesavananda Bharati case formulates the Basic Structure doctrine, holding that Parliament cannot alter the basic structure via Article 368. 1975–1977: Emergency period under Article 352; significant scrutiny of fundamental rights and constitutional processes. 1976: 42nd Amendment (the 'mini-Constitution') expands Directive Principles, curtails judicial review; adds terms 'Socialist' and 'Secular' to the Preamble. 1978: 44th Amendment restores many rights curtailed by 42nd; alters emergency provisions. 1980s–1990s: Developments in public interest litigation expand access to justice. 1992–1993: 73rd and 74th Amendments institutionalise Panchayats and Municipalities with 11th and 12th Schedules. 2002: 86th Amendment introduces Article 21A (Right to Education). 2003–2004: 91st Amendment strengthens anti-defection and limits Council of Ministers' size. 2016: 101st Amendment introduces Goods and Services Tax (GST). 2018: 102nd Amendment grants constitutional status to National Commission for Backward Classes. 2019: 103rd Amendment introduces 10% EWS reservation. Present: The Constitution remains a living document, guided by judicial interpretation and periodic amendments while preserving its basic structure."
+  },
+  {
+    "id": "PREAMBLE",
+    "title": "The Preamble",
+    "section": "Preamble",
+    "tags": ["preamble", "philosophy"],
+    "content": "We, the People of India, have resolved to constitute India into a Sovereign, Socialist, Secular, Democratic Republic and to secure Justice, Liberty, Equality, and Fraternity. The Preamble guides constitutional interpretation and, though not enforceable, expresses the Constitution's philosophy."
+  },
+  {
+    "id": "PART_I",
+    "title": "Union and its Territory",
+    "section": "Part I",
+    "tags": ["federal", "territory"],
+    "content": "Part I (Articles 1–4) defines India as a Union of States, provides for admission, establishment, or alteration of states, and adapts names and boundaries by law."
+  },
+  {
+    "id": "PART_II",
+    "title": "Citizenship",
+    "section": "Part II",
+    "tags": ["citizenship"],
+    "content": "Part II (Articles 5–11) deals with citizenship at commencement and empowers Parliament to regulate citizenship by law."
+  },
+  {
+    "id": "PART_III_OVERVIEW",
+    "title": "Fundamental Rights: Overview",
+    "section": "Part III",
+    "tags": ["fundamental rights", "FR"],
+    "content": "Part III (Articles 12–35) guarantees justiciable fundamental rights, including equality before law, freedoms, protection in respect of conviction, life and personal liberty, and remedies for enforcement."
+  },
+  {
+    "id": "ART_12_13",
+    "title": "Articles 12–13: Definition and Laws Inconsistent with FRs",
+    "section": "Articles 12–13",
+    "tags": ["definition", "judicial review"],
+    "content": "Article 12 defines 'State' for Part III. Article 13 renders laws inconsistent with or in derogation of fundamental rights void to the extent of inconsistency and preserves judicial review."
+  },
+  {
+    "id": "ART_14",
+    "title": "Article 14: Equality Before Law",
+    "section": "Article 14",
+    "tags": ["equality", "classification"],
+    "content": "Article 14 guarantees equality before law and equal protection of the laws. Reasonable classification is permissible if it has intelligible differentia and rational nexus with the object sought to be achieved."
+  },
+  {
+    "id": "ART_15",
+    "title": "Article 15: Prohibition of Discrimination",
+    "section": "Article 15",
+    "tags": ["discrimination", "reservation"],
+    "content": "Article 15 prohibits discrimination on grounds of religion, race, caste, sex, or place of birth. Clauses (4), (5), and (6) permit special provisions, including reservations, for socially and educationally backward classes, Scheduled Castes and Tribes, and EWS."
+  },
+  {
+    "id": "ART_16",
+    "title": "Article 16: Equality of Opportunity in Public Employment",
+    "section": "Article 16",
+    "tags": ["employment", "reservation"],
+    "content": "Article 16 ensures equality of opportunity in public employment. Clause (4) allows reservation for backward classes not adequately represented; related 77th, 81st, 85th Amendments concern promotions and consequential seniority."
+  },
+  {
+    "id": "ART_19",
+    "title": "Article 19: Freedoms and Reasonable Restrictions",
+    "section": "Article 19",
+    "tags": ["freedom", "speech", "assembly", "association", "movement", "residence", "profession"],
+    "content": "Article 19(1) confers freedoms: speech and expression, assembly, association, movement, residence, and profession. Clauses (2)–(6) permit reasonable restrictions in interests like sovereignty and integrity, public order, decency, or morality."
+  },
+  {
+    "id": "ART_20_22",
+    "title": "Articles 20–22: Protection in Respect of Conviction and Personal Liberty",
+    "section": "Articles 20–22",
+    "tags": ["criminal law", "detention"],
+    "content": "Article 20 prohibits ex post facto criminal laws, double jeopardy, and self-incrimination. Article 21 guarantees life and personal liberty except according to procedure established by law, expansively interpreted to include dignity, privacy, and due process. Article 22 provides safeguards against arbitrary arrest and detention and regulates preventive detention."
+  },
+  {
+    "id": "ART_21A",
+    "title": "Article 21A: Right to Education",
+    "section": "Article 21A",
+    "tags": ["education", "RTE"],
+    "content": "Article 21A mandates free and compulsory education for children of 6 to 14 years, implemented through the Right of Children to Free and Compulsory Education Act, 2009."
+  },
+  {
+    "id": "ART_23_24",
+    "title": "Articles 23–24: Exploitation Prohibited",
+    "section": "Articles 23–24",
+    "tags": ["trafficking", "child labour"],
+    "content": "Article 23 prohibits traffic in human beings and forced labour. Article 24 prohibits employment of children below age 14 in factories, mines, and hazardous employments."
+  },
+  {
+    "id": "ART_25_28",
+    "title": "Articles 25–28: Freedom of Religion",
+    "section": "Articles 25–28",
+    "tags": ["religion", "secularism"],
+    "content": "Articles 25–28 guarantee freedom of conscience and free profession, practice, and propagation of religion; manage religious affairs; freedom from taxes for promotion of any religion; and freedom in attendance at religious instruction in certain institutions, subject to public order, morality, and health."
+  },
+  {
+    "id": "ART_29_30",
+    "title": "Articles 29–30: Cultural and Educational Rights",
+    "section": "Articles 29–30",
+    "tags": ["minorities", "education"],
+    "content": "Article 29 protects the interests of minorities in conserving their language, script, or culture. Article 30 grants minorities the right to establish and administer educational institutions."
+  },
+  {
+    "id": "ART_32",
+    "title": "Article 32: Right to Constitutional Remedies",
+    "section": "Article 32",
+    "tags": ["writs", "SC"],
+    "content": "Article 32 empowers the Supreme Court to issue writs for enforcement of fundamental rights—habeas corpus, mandamus, prohibition, quo warranto, and certiorari. It is itself a fundamental right."
+  },
+  {
+    "id": "PART_IV_DPSP",
+    "title": "Directive Principles of State Policy",
+    "section": "Part IV",
+    "tags": ["DPSP", "welfare state"],
+    "content": "Part IV (Articles 36–51) contains non-justiciable directives guiding the State toward social and economic democracy—promoting welfare, minimizing inequalities, securing a living wage, and organizing village panchayats."
+  },
+  {
+    "id": "PART_IV_A_DUTIES",
+    "title": "Fundamental Duties",
+    "section": "Part IV-A",
+    "tags": ["duties"],
+    "content": "Inserted by the 42nd Amendment, Article 51A lists Fundamental Duties of citizens, including respecting the Constitution, cherishing the ideals of the freedom struggle, protecting the environment, and developing scientific temper."
+  },
+  {
+    "id": "SEVENTH_SCHEDULE",
+    "title": "Seventh Schedule: Union, State, and Concurrent Lists",
+    "section": "Seventh Schedule",
+    "tags": ["federal", "lists"],
+    "content": "The Seventh Schedule divides legislative subjects into Union, State, and Concurrent Lists, structuring India's quasi-federal legislative competence. Conflicts in the Concurrent List may be resolved by the rule of repugnancy subject to presidential assent."
+  },
+  {
+    "id": "PART_V_PARLIAMENT",
+    "title": "The Union: Executive and Parliament",
+    "section": "Part V",
+    "tags": ["president", "parliament"],
+    "content": "Part V establishes the Union Executive (President, Vice-President, Council of Ministers led by the Prime Minister) and Parliament (Lok Sabha and Rajya Sabha), outlining powers, privileges, and legislative procedure."
+  },
+  {
+    "id": "SUPREME_COURT",
+    "title": "Supreme Court of India",
+    "section": "Part V, Chapter IV",
+    "tags": ["judiciary", "SC"],
+    "content": "Articles 124–147 constitute the Supreme Court: appointment of judges, jurisdiction (original, appellate, advisory), and independence of the judiciary as part of the basic structure."
+  },
+  {
+    "id": "EMERGENCY_PROVISIONS",
+    "title": "Emergency Provisions",
+    "section": "Part XVIII",
+    "tags": ["emergency", "A352", "A356", "A360"],
+    "content": "Articles 352 (National Emergency), 356 (President's Rule), and 360 (Financial Emergency) empower the Union to respond to crises, subject to safeguards, parliamentary approval, time limits, and the 44th Amendment constraints."
+  },
+  {
+    "id": "PANCHAYATS_MUNICIPALITIES",
+    "title": "73rd and 74th Amendments: Local Self-Government",
+    "section": "Parts IX and IX-A",
+    "tags": ["panchayats", "municipalities", "decentralization"],
+    "content": "The 73rd and 74th Amendments constitutionalised Panchayats and Municipalities, introduced the 11th and 12th Schedules, ensured regular elections, reservations, and State Finance Commissions to strengthen grassroots democracy."
+  },
+  {
+    "id": "SCHEDULES_OVERVIEW",
+    "title": "Schedules Overview",
+    "section": "Schedules",
+    "tags": ["schedules", "anti-defection"],
+    "content": "Twelve Schedules cover matters like allocation of seats, forms of oaths, Union and State Lists, and municipal functions. The Tenth Schedule contains anti-defection provisions; the Eleventh and Twelfth list Panchayat and Municipality subjects."
+  },
+  {
+    "id": "AMENDMENTS_MAJOR",
+    "title": "Major Amendments",
+    "section": "Article 368 & Major Amendments",
+    "tags": ["amendments", "basic structure"],
+    "content": "42nd (1976) expanded DPSPs and curtailed review; 44th (1978) restored rights and refined emergencies; 52nd (1985) added anti-defection; 61st (1989) reduced voting age to 18; 73rd and 74th (1992–93) local bodies; 86th (2002) Article 21A (education); 91st (2003) limits on Council size and defections; 101st (2016) GST; 102nd (2018) NCBC status; 103rd (2019) EWS reservation."
+  },
+  {
+    "id": "WRITS_DETAIL",
+    "title": "Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto",
+    "section": "Writs",
+    "tags": ["writs", "judicial review"],
+    "content": "Habeas corpus commands production of a detained person; mandamus compels performance of public duty; prohibition restrains lower courts from exceeding jurisdiction; certiorari quashes illegal orders; quo warranto challenges a person's right to public office."
+  },
+  {
+    "id": "BASIC_STRUCTURE",
+    "title": "Basic Structure Doctrine",
+    "section": "Judicial Doctrine",
+    "tags": ["basic structure", "Kesavananda"],
+    "content": "In Kesavananda Bharati (1973), the Supreme Court held that while Parliament can amend the Constitution under Article 368, it cannot alter its basic structure—features like supremacy of the Constitution, republican and democratic form, secularism, separation of powers, and judicial review."
+  },
+  {
+    "id": "RTI_CONTEXT",
+    "title": "Right to Information: Constitutional Context",
+    "section": "Statutory Right with Constitutional Backing",
+    "tags": ["RTI", "transparency"],
+    "content": "The Right to Information Act, 2005 is a statutory right flowing from the constitutional values of transparency and the freedom of speech and expression under Article 19(1)(a), enabling citizens to access information held by public authorities."
+  },
+  {
+    "id": "PRIVACY_PUTTASWAMY",
+    "title": "Right to Privacy: Puttaswamy (2017)",
+    "section": "Judicial Development",
+    "tags": ["privacy", "Article 21"],
+    "content": "In Justice K.S. Puttaswamy (2017), a nine-judge bench of the Supreme Court recognised privacy as a fundamental right under Article 21, influencing data protection and surveillance jurisprudence."
+  },
+  {
+    "id": "EDUCATION_RTE",
+    "title": "Education and Reservations",
+    "section": "Articles 15(5), 21A",
+    "tags": ["education", "reservation"],
+    "content": "Article 15(5) enables reservations in educational institutions, subject to minority rights under Article 30; Article 21A imposes a duty on the State to provide free and compulsory education to children aged 6–14."
+  },
+  {
+    "id": "ELECTIONS_ECI",
+    "title": "Elections and the Election Commission",
+    "section": "Part XV",
+    "tags": ["ECI", "elections"],
+    "content": "Part XV (Articles 324–329) vests the superintendence, direction, and control of elections in the Election Commission of India, ensuring free and fair elections subject to constitutional and statutory frameworks."
+  }
+]
+
