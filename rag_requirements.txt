@@ -1,0 +1,17 @@
+flask
+flask-cors
+flask-sqlalchemy
+sentence-transformers
+faiss-cpu
+transformers
+torch
+numpy
+scikit-learn
+python-dotenv
+chromadb
+langchain
+langchain-community
+langchain-huggingface
+openai
+tiktoken
+rank-bm25

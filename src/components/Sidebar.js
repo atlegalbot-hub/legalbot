@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, History, BarChart3, X, Search } from 'lucide-react';
+import { MessageCircle, History, BarChart3, X, Search, Brain, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 
@@ -9,8 +9,10 @@ const Sidebar = ({ currentView, setCurrentView, isOpen, setIsOpen, userId }) => 
   const [isSearching, setIsSearching] = useState(false);
 
   const menuItems = [
-    { id: 'chat', label: 'Chat', icon: MessageCircle },
+    { id: 'rag-chat', label: 'RAG Chat', icon: Brain, badge: 'AI' },
+    { id: 'chat', label: 'Simple Chat', icon: MessageCircle },
     { id: 'history', label: 'History', icon: History },
+    { id: 'rag-analytics', label: 'RAG Analytics', icon: Layers, badge: 'NEW' },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
   ];
 
@@ -78,14 +80,27 @@ const Sidebar = ({ currentView, setCurrentView, isOpen, setIsOpen, userId }) => 
                   setCurrentView(item.id);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-colors ${
                   currentView === item.id
-                    ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                    ? (item.badge === 'AI' ? 'bg-purple-100 text-purple-700 border border-purple-200' : 'bg-blue-100 text-blue-700 border border-blue-200')
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                <item.icon className="h-5 w-5" />
-                <span className="font-medium">{item.label}</span>
+                <div className="flex items-center space-x-3">
+                  <item.icon className="h-5 w-5" />
+                  <span className="font-medium">{item.label}</span>
+                </div>
+                {item.badge && (
+                  <span className={`px-2 py-1 text-xs font-bold rounded-full ${
+                    item.badge === 'AI' 
+                      ? 'bg-purple-200 text-purple-800' 
+                      : item.badge === 'NEW'
+                      ? 'bg-green-200 text-green-800'
+                      : 'bg-blue-200 text-blue-800'
+                  }`}>
+                    {item.badge}
+                  </span>
+                )}
               </button>
             </li>
           ))}

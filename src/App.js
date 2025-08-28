@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ChatInterface from './components/ChatInterface';
+import RAGChatInterface from './components/RAGChatInterface';
 import History from './components/History';
 import Analytics from './components/Analytics';
+import RAGAnalytics from './components/RAGAnalytics';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import { motion } from 'framer-motion';
 
 function App() {
-  const [currentView, setCurrentView] = useState('chat');
+  const [currentView, setCurrentView] = useState('rag-chat');
   const [userId, setUserId] = useState('');
   const [userClass, setUserClass] = useState('10th');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [useRAG, setUseRAG] = useState(true);
 
   useEffect(() => {
     // Generate or retrieve user ID
@@ -63,11 +66,17 @@ function App() {
             {currentView === 'chat' && (
               <ChatInterface userId={userId} userClass={userClass} />
             )}
+            {currentView === 'rag-chat' && (
+              <RAGChatInterface userId={userId} userClass={userClass} />
+            )}
             {currentView === 'history' && (
               <History userId={userId} />
             )}
             {currentView === 'analytics' && (
               <Analytics />
+            )}
+            {currentView === 'rag-analytics' && (
+              <RAGAnalytics />
             )}
           </motion.div>
         </main>
