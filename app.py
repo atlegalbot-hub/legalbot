@@ -65,6 +65,16 @@ def create_app():
                 boost REAL NOT NULL DEFAULT 0.0,
                 updated_at TEXT NOT NULL DEFAULT (datetime('now'))
             );
+
+            CREATE TABLE IF NOT EXISTS uploads (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                session_id TEXT NOT NULL,
+                filename TEXT NOT NULL,
+                content TEXT NOT NULL,
+                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+            );
+
+            CREATE INDEX IF NOT EXISTS idx_uploads_session ON uploads(session_id);
             """
         )
         db.commit()
@@ -143,19 +153,66 @@ def create_app():
         db.commit()
 
     def retrieve(query_text, top_k=5):
-        query_vec = vectorizer.transform([query_text])
-        cosine_scores = linear_kernel(query_vec, tfidf_matrix).ravel()
+        # Build dynamic matrix with session uploads appended to base KB
+        db = get_db()
+        rows = db.execute("SELECT filename, content FROM uploads WHERE session_id = ? ORDER BY id ASC", (session["session_id"],)).fetchall()
+        session_docs = []
+        session_doc_meta = []
+        for r in rows:
+            text = (r["content"] or "").strip()
+            if not text:
+                continue
+            session_docs.append(text)
+            session_doc_meta.append({"id": f"UPLOAD::{r['filename']}", "title": r["filename"], "section": "Upload"})
+
+        if session_docs:
+            combined_corpus = corpus + session_docs
+            local_vec = TfidfVectorizer(
+                ngram_range=(1, 2), stop_words="english", max_df=0.9, min_df=1
+            )
+            local_matrix = local_vec.fit_transform(combined_corpus)
+            query_vec = local_vec.transform([query_text])
+            cosine_scores = linear_kernel(query_vec, local_matrix).ravel()
+            base_count = len(corpus)
+            def get_doc_by_index(idx):
+                if idx < base_count:
+                    return index_to_doc[idx]
+                else:
+                    return session_doc_meta[idx - base_count]
+        else:
+            query_vec = vectorizer.transform([query_text])
+            cosine_scores = linear_kernel(query_vec, tfidf_matrix).ravel()
+            def get_doc_by_index(idx):
+                return index_to_doc[idx]
         # Apply boosts
         top_indices = cosine_scores.argsort()[::-1][:max(top_k * 3, 10)]
-        boosts_map = get_doc_boosts(top_indices)
+        boosts_map = get_doc_boosts([i for i in top_indices if i < len(index_to_doc)])
         adjusted_scores = []
         for idx in top_indices:
-            doc = index_to_doc[idx]
-            boost = float(boosts_map.get(doc["id"], 0.0))
+            doc = get_doc_by_index(idx)
+            boost = float(boosts_map.get(doc.get("id", ""), 0.0)) if "UPLOAD::" not in doc.get("id", "") else 0.0
             adjusted_scores.append((idx, float(cosine_scores[idx] + 0.15 * boost)))
         adjusted_scores.sort(key=lambda x: x[1], reverse=True)
         top = adjusted_scores[:top_k]
-        return [(index_to_doc[i], score) for i, score in top]
+        return [(get_doc_by_index(i), score) for i, score in top]
+
+    def extract_text_from_pdf(file_stream):
+        try:
+            from pypdf import PdfReader
+        except Exception:
+            return ""
+        try:
+            reader = PdfReader(file_stream)
+            texts = []
+            for page in reader.pages:
+                try:
+                    txt = page.extract_text() or ""
+                except Exception:
+                    txt = ""
+                texts.append(txt)
+            return "\n".join(texts)
+        except Exception:
+            return ""
 
     def build_irac_answer(user_query, retrieved_docs):
         # Extract top sentences relevant to the query from top documents
@@ -324,6 +381,35 @@ def create_app():
                 "created_at": r["created_at"],
             })
         return jsonify({"history": history[::-1]})
+
+    @app.route("/api/uploads", methods=["GET"])
+    def api_list_uploads():
+        db = get_db()
+        rows = db.execute("SELECT id, filename, length(content) AS size, created_at FROM uploads WHERE session_id = ? ORDER BY id DESC", (session["session_id"],)).fetchall()
+        return jsonify({
+            "uploads": [
+                {"id": r["id"], "filename": r["filename"], "size": int(r["size"] or 0), "created_at": r["created_at"]}
+                for r in rows
+            ]
+        })
+
+    @app.route("/api/upload_pdf", methods=["POST"])
+    def api_upload_pdf():
+        if 'file' not in request.files:
+            return jsonify({"error": "file missing"}), 400
+        f = request.files['file']
+        if not f or not f.filename.lower().endswith('.pdf'):
+            return jsonify({"error": "please upload a .pdf file"}), 400
+        content = extract_text_from_pdf(f.stream)
+        if not content.strip():
+            return jsonify({"error": "could not extract text"}), 400
+        db = get_db()
+        db.execute(
+            "INSERT INTO uploads(session_id, filename, content) VALUES (?, ?, ?)",
+            (session["session_id"], f.filename, content),
+        )
+        db.commit()
+        return jsonify({"ok": True})
 
     @app.route("/api/feedback", methods=["POST"])
     def api_feedback():

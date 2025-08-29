@@ -5,6 +5,7 @@ const sendBtn = byId('send');
 const historyBtn = byId('btn-history');
 const exportBtn = byId('btn-export');
 const timelineBtn = byId('btn-timeline');
+const fileInput = byId('file-input');
 
 function el(tag, cls, text) {
   const e = document.createElement(tag);
@@ -16,8 +17,8 @@ function el(tag, cls, text) {
 async function api(path, opts = {}) {
   const res = await fetch(path, {
     method: opts.method || 'GET',
-    headers: { 'Content-Type': 'application/json' },
-    body: opts.body ? JSON.stringify(opts.body) : undefined,
+    headers: opts.form ? undefined : { 'Content-Type': 'application/json' },
+    body: opts.form ? opts.body : (opts.body ? JSON.stringify(opts.body) : undefined),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return await res.json();
@@ -80,6 +81,33 @@ async function sendMessage() {
     input.disabled = false;
     sendBtn.disabled = false;
     input.focus();
+  }
+}
+
+async function listUploads() {
+  try {
+    const data = await api('/api/uploads');
+    const ul = byId('uploads-list');
+    ul.innerHTML = '';
+    for (const u of data.uploads) {
+      const li = el('li');
+      li.innerHTML = `<div>${u.filename}</div><small>${Math.round((u.size||0)/1024)} KB • ${new Date(u.created_at).toLocaleString()}</small>`;
+      ul.appendChild(li);
+    }
+  } catch (e) {
+    console.error('uploads list failed', e);
+  }
+}
+
+async function uploadPdf(file) {
+  const form = new FormData();
+  form.append('file', file);
+  try {
+    const res = await api('/api/upload_pdf', { method: 'POST', body: form, form: true });
+    renderMessage({ who: 'bot', text: 'PDF uploaded and indexed successfully.' });
+    await listUploads();
+  } catch (e) {
+    renderMessage({ who: 'bot', text: 'Upload failed. Please try a different PDF.' });
   }
 }
 
@@ -157,8 +185,13 @@ input.addEventListener('keydown', (e) => {
 historyBtn.addEventListener('click', loadHistory);
 exportBtn.addEventListener('click', exportHistory);
 timelineBtn.addEventListener('click', showTimeline);
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files && e.target.files[0];
+  if (f) uploadPdf(f);
+});
 
 loadHistory();
 loadMetrics();
+listUploads();
 input.focus();
 
